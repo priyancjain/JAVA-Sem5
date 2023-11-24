@@ -84,7 +84,7 @@ private static void vote_casting(Scanner sc,boolean isSpecialRound)
             count--;
             System.out.println("Individual that you have voted does not exists");
             return;
-        
+        }
     }
 }
 
@@ -92,7 +92,7 @@ private static void CandidateWiseResult(Scanner sc)
 {
     count--;
     System.out.println("Enter Candidate Name");
-    String name=sc.nextLine();
+    String name=sc.next();
     switch(name)
     {
         case "A":
@@ -112,8 +112,18 @@ private static void CandidateWiseResult(Scanner sc)
 
     }
 }
+private static void ComprehensiveReport()
+{
+    count--;
+    System.out.println("Vote for A is " + A + "\nVote for B is " + B +"\n Vote for C is "+C+"\n Vote for D is " + D);
+}
+private static void exitvotting()
+{
+    System.out.println("Exitting votting");
+    System.exit(0);
+}
     public static void main(String args[]){
-        Scanner sc= new Scanner();
+        Scanner sc= new Scanner(System.in);
         System.out.println("Voting Started:");
         while(true)
         {
