@@ -6,8 +6,8 @@ class SumAvgLen{
             sum+=Float.parseFloat(s);
 
         }
-        System.out.println(args.length);
-        System.out.println(sum);
-        System.out.println(sum/args.length);
+        System.out.println("The total count of numbers supplied from Command line "+args.length);
+        System.out.println("The sum of given number is "+sum);
+        System.out.println("The average of given number are "+sum/args.length);
     }
 }
