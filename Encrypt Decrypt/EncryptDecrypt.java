@@ -26,7 +26,7 @@ public class EncryptDecrypt {
             char c=message.charAt(i);
             if(Character.isLetter(c))
             {
-                char ch=(char)(c+key);
+                char ch=(char)((c - 'A' + key) % 26 + 'A');
                 encrypt[i]=ch;
             }
             else
@@ -38,13 +38,16 @@ public class EncryptDecrypt {
     }
    private static String decrypt(String EncryptedMesssage,int key)
    {
+
+   
+
      char[] decrypt=new char[EncryptedMesssage.length()];
      for(int i=0;i<EncryptedMesssage.length();i++)
      {
         char c=EncryptedMesssage.charAt(i);
         if(Character.isLetter(c))
         {
-            char ch=(char)(c-key);
+            char ch=(char)((c - 'A' - key+26) % 26 + 'A');
             decrypt[i]=ch;
         }
         else
