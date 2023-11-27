@@ -70,17 +70,14 @@ private static void vote_casting(Scanner sc,boolean isSpecialRound)
             System.out.println("Voted for B");
             break;
         case 3:
-        
             C++;
             System.out.println("Voted for C");
             break;
         case 4:
-        
             D++;
             System.out.println("Voted for D");
             break;
         default:
-        
             count--;
             System.out.println("Individual that you have voted does not exists");
             return;
@@ -128,7 +125,7 @@ private static void exitvotting()
         while(true)
         {
             count++;
-            System.out.println("Press\n 1. for Vote Casting \n 2. for Candidate wise result \n 3. For Comprehensive report \n 4. foor exit");
+            System.out.println("Press\n 1. for Vote Casting \n 2. for Candidate wise result \n 3. For Comprehensive report \n 4. for exit");
             int choice=sc.nextInt();
             if(count % 3==0 || count % 7==0)
             {

@@ -40,6 +40,7 @@ public class lrpad {
         {
             return input;
         }
+        
         String padding =new String(new char[paddinglength]).replace('\0',padchar);
         return input + padding ;
 
