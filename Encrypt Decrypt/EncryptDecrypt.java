@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class EncryptDecrypt {
@@ -18,24 +19,21 @@ public class EncryptDecrypt {
         String DecryptedMessage=decrypt(EncryptedMesssage,key);
         System.out.println("The Decrypted Message is "+DecryptedMessage);
     }
-    private static String encrypt(int key)
-    {
-        char[] encrypt=new char[message.length()];
-        for(int i=0;i<message.length();i++)
-        {
-            char c=message.charAt(i);
-            if(Character.isLetter(c))
-            {
-                char ch=(char)((c - 'A' + key) % 26 + 'A');
-                encrypt[i]=ch;
-            }
-            else
-            {
-                encrypt[i]=c;
-            }
+   private static String encrypt(int key) {
+    char[] encrypt = new char[message.length()];
+    for (int i = 0; i < message.length(); i++) {
+        char c = message.charAt(i);
+
+        if (Character.isLetter(c)) {
+            char base = Character.isUpperCase(c) ? 'A' : 'a';
+            char ch = (char) ((c - base + key) % 26 + base);
+            encrypt[i] = ch;
+        } else {
+            encrypt[i] = c;
         }
-        return new String(encrypt);
     }
+    return new String(encrypt);
+}
    private static String decrypt(String EncryptedMesssage,int key)
    {
 
@@ -47,7 +45,8 @@ public class EncryptDecrypt {
         char c=EncryptedMesssage.charAt(i);
         if(Character.isLetter(c))
         {
-            char ch=(char)((c - 'A' - key+26) % 26 + 'A');
+            char base = Character.isUpperCase(c) ? 'A' : 'a';
+            char ch=(char)((c - base - key+26) % 26 + base);
             decrypt[i]=ch;
         }
         else
